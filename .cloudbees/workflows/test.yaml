@@ -1,0 +1,22 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: test
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        type: string
+        required: true
+
+jobs:
+  test:
+    steps:
+
+    - id: test
+      name: test
+      uses: docker://alpine:latest
+      run: |
+        echo "Manifest argument is: $MANIFEST"
+      env:
+        MANIFEST:  "${{ inputs.manifest }}"
