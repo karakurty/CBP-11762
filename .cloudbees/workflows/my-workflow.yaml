@@ -14,4 +14,4 @@ on:
     inputs:
       manifest:
         type: string
-#        required: true
+        required: true
