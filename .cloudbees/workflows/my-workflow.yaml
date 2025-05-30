@@ -11,3 +11,7 @@ jobs:
           echo "hello world"
 on:
   workflow_dispatch:
+    inputs:
+      manifest:
+        type: string
+        required: true
